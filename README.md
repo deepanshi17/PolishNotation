@@ -7,23 +7,20 @@ The basic structure includes four language statements. Two of these (var and set
 text Hello
 text “Hello World”
 * output statements result in a number being displayed on the screen. The number displayed is the result of evaluating any legal Blip expression. For now, Blip only supports integer variables, and so only integer values can be displayed. The following are examples of output statements. For more information on Blip expressions, see below
-output 42
-output + 1 1
-output * x x
-output + * x x * y y
+- output 42
+- output + 1 1
+- output * x x
+- output + * x x * y y
 * var statements initialize a new variable. If a var statement specifies a variable that already exists, then Blip must generate a warning (not an error), with the text, “variable <varName> incorrectly re-initialized”, where <VarName> is the variable’s name. Regardless of whether the warning message is created, the result of a var statement is to ensure that there is a variable in the Blip internal memory with the specified value. The variable must be set to the value of a legal Blip expression. The syntax is: “var <varName> <expr>”. The following are examples of legal var expressions
-var x 42 
-var y + x 1
+- var x 42 
+- var y + x 1
 * set statements are just like var statements, except a set statement should be used to re-assign a new value to an existing variable. As such, if a set statement specifies a variable that does not already exist, then Blip must generate a warning (not an error) with the text, “variable <varName> not declared”. Regardless of whether the warning message is created, the result of a set statement is to ensure that there is a variable in the Blip internal memory with the specified value. The following are examples of legal set expressions
-set x 42 
-set x + x 1
+- set x 42 
+- set x + x 1
 Blip programs do not have to have only a single statement on a line, in fact, line breaks don’t really matter to Blip (nor do tabs or spaces). Additionally, Blip programs can have comments between statements (but not in the middle of a statement). For example, the following is correct Blip
 text “Hello, and welcome to Blip” // first line var x 0
 // set x to (5 + 3) * (x – 1)
-set x
-*
-+53
--x1
+- set x * +53 -x1
 
 A comment is marked by // and continues to the end of the current line. Note that the following statement is illegal in Blip, since we can’t have comments in the middle of a statement
 output + // two terms in this expression * 5 3 // 5 * 3 is the first term
